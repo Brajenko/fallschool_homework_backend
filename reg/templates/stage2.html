@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}Title 2{% endblock %}
+{% block nav_button_text %}Назад{% endblock %}
+{% block stage_name %}Образование{% endblock %}
+{% block progress_bar_span %}<span style="width:33%"></span>{% endblock %}
+
+{% block left_form %}
+<div class="form__left">
+    <div class="input-radio-group">
+      <div class="var__input-radio-group">
+        <input type="radio" name="role" id="student" value="student">
+        <label for="student"><p>Студент / выпускник</p></label>
+      </div>
+      <div class="var__input-radio-group">
+        <input type="radio" name="role" id="teacher" value="teacher">
+        <label for="teacher"><p>Сотрудник</p></label>
+      </div>
+    </div>
+    <div class="education__form">
+      <div class="inline-radio-group">
+        <small class="gray">Курс</small>
+        <div class="radio-inline">
+          <input label="1" type="radio" id="course1" name="course" value="1">
+          <input label="2" type="radio" id="course2" name="course" value="2">
+          <input label="3" type="radio" id="course3" name="course" value="3">
+          <input label="4" type="radio" id="course4" name="course" value="4">
+          <input label="5" type="radio" id="course5" name="course" value="5">
+          <input label="6" type="radio" id="course6" name="course" value="6">
+        </div>
+        <div class="custom-checkbox">
+          <input type="checkbox" name="is-graduate" id="is-graduate">
+          <label for="is-graduate"><p>Уже окончил вышку</p></label>
+        </div>
+      </div>
+      <div class="dropdown-container">
+        <small class="gray">Ступень образования</small>
+        <button class="dropdown" type="button">
+            <div class="dropdown-text">Ступень образования</div>
+            <img src="/src/img/arrow-down.svg" alt="" class="arrow arrow-down">
+            <img src="/src/img/arrow-up.svg" alt="" class="arrow arrow-up hide">
+            <div class="dropdown-part hide">
+                <img src="/src/img/dropdown-part.svg" alt="">
+            </div>
+            <div class="dropdown-content hide">
+                <a class="dropdown-elem">Бакалавриат</a>
+                <a class="dropdown-elem">Магистратура</a>
+                <a class="dropdown-elem">Аспирантура</a>
+            </div>
+        </button>
+      </div>
+      <div class="dropdown-container">
+        <small class="gray">Факультет</small>
+        <button class="dropdown" type="button">
+            <div class="dropdown-text">Факультет</div>
+            <img src="/src/img/arrow-down.svg" alt="" class="arrow arrow-down">
+            <img src="/src/img/arrow-up.svg" alt="" class="arrow arrow-up hide">
+            <div class="dropdown-part hide">
+                <img src="/src/img/dropdown-part.svg" alt="">
+            </div>
+            <div class="dropdown-content hide">
+                <a class="dropdown-elem">Факультет математики</a>
+                <a class="dropdown-elem">Факультет экономических наук</a>
+                <a class="dropdown-elem">Московский институт электроники и математики им. А.Н. Тихонова</a>
+                <a class="dropdown-elem">Факультет компьютерных наук</a>
+                <a class="dropdown-elem">Высшая школа бизнеса</a>
+                <a class="dropdown-elem">Факультет права</a>
+                <a class="dropdown-elem">Высшая школа юриспруденции и администри­рования</a>
+                <a class="dropdown-elem">Факультет гуманитарных наук</a>
+                <a class="dropdown-elem">Факультет социальных наук</a>
+                <a class="dropdown-elem">Факультет креативных индустрий</a>
+                <a class="dropdown-elem">Факультет мировой экономики и мировой политики</a>
+                <a class="dropdown-elem">Факультет физики</a>
+                <a class="dropdown-elem">Международный институт экономики и финансов</a>
+                <a class="dropdown-elem">Факультет городского и регионального развития</a>
+                <a class="dropdown-elem">Факультет химии</a>
+                <a class="dropdown-elem">Факультет биологии и биотехнологии</a>
+                <a class="dropdown-elem">Факультет географии и гео­ин­фор­ма­ци­он­ных технологий</a>
+                <a class="dropdown-elem">Школа иностранных языков</a>
+                <a class="dropdown-elem">Институт статистических исследований и экономики знаний</a>
+                <a class="dropdown-elem">Банковский институт</a>
+                <a class="dropdown-elem">Школа инноватики и пред­при­ни­мательства</a>
+            </div>
+        </button>
+      </div>
+    </div>
+    <div class="input-text-group">
+      <input type="input" class="input-field" placeholder="" name="job" id='job' required />
+      <label for="job" class="input-label">Работа</label>
+    </div>
+  </div>
+{% endblock %}
+{% block text_stage_content %}
+<b>Расскажи где ты учишься</b>
+<br>
+<small>Часто студенты ищут соседей по схожим интересам</small>
+{% endblock %}
+{% block smile_stage_content %}
+<img src="{% static '/img/happy-smile.svg' %}" alt="">
+{% endblock %}

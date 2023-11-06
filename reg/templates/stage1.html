@@ -1,0 +1,207 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}Title 1{% endblock %}
+{% block nav_button_text %}На главную{% endblock %}
+{% block stage_name %}О себе{% endblock %}
+{% block progress_bar_span %}<span style="width:10%"></span>{% endblock %}
+
+{% block left_form %}
+<div class="form__left">
+    <div class="input-text-group">
+      <input type="input" class="input-field" placeholder="" name="fullname" id='fullname'/>
+      <label for="fullname" class="input-label">
+          <div class="label-text">Имя и фамилия</div>
+          <div class="remove-border"></div>
+      </label>
+      <div class="error-msg"><small></small></div>
+    </div>
+    <div class="input-radio-group">
+      <div class="var__input-radio-group">
+        <input type="radio" name="gender" id="male" value="male">
+        <label for="male"><p>Парень</p></label>
+      </div>
+      <div class="var__input-radio-group">
+        <input type="radio" name="gender" id="female" value="female">
+        <label for="female"><p>Девушка</p></label>
+      </div>
+      <div class="error-msg"><small></small></div>
+    </div>
+    <div class="input-date-group">
+      <div class="input-date">
+          <p class="gray">Дата рождения</p>
+          <img src="/src/img/calendar.svg" class="calendar-img">
+      </div>
+      <div class="date-picker hide">
+          <div class="year-picker hide">
+              <div class="row__year-picker">
+                  <p class="year-number">1981</p>
+                  <p class="year-number">1982</p>
+                  <p class="year-number">1983</p>
+                  <p class="year-number">1984</p>
+              </div>
+              <div class="row__year-picker">
+                  <p class="year-number">1985</p>
+                  <p class="year-number">1986</p>
+                  <p class="year-number">1987</p>
+                  <p class="year-number">1988</p>
+              </div>
+              <div class="row__year-picker">
+                  <p class="year-number">1989</p>
+                  <p class="year-number">1990</p>
+                  <p class="year-number">1991</p>
+                  <p class="year-number">1992</p>
+              </div>
+              <div class="row__year-picker">
+                  <p class="year-number">1993</p>
+                  <p class="year-number">1994</p>
+                  <p class="year-number">1995</p>
+                  <p class="year-number">1996</p>
+              </div>
+              <div class="row__year-picker">
+                  <p class="year-number">1997</p>
+                  <p class="year-number">1998</p>
+                  <p class="year-number">1999</p>
+                  <p class="year-number">2000</p>
+              </div>
+              <div class="row__year-picker">
+                  <p class="year-number">2001</p>
+                  <p class="year-number">2002</p>
+                  <p class="year-number">2003</p>
+                  <p class="year-number">2004</p>
+              </div>
+              <div class="row__year-picker">
+                  <p class="year-number">2005</p>
+                  <p class="year-number">2006</p>
+                  <p class="year-number">2007</p>
+                  <p class="year-number">2008</p>
+              </div>
+          </div>
+          <div class="month-picker hide">
+              <div class="year-switcher">
+                  <img src="/src/img/arrow-down.svg" alt="" style="transform: rotate(90deg)" class="left">
+                  <p>2002</p>
+                  <img src="/src/img/arrow-down.svg" alt="" style="transform: rotate(270deg)" class="right">
+              </div>
+              <div class="row__month-picker">
+                  <p class="month-name">Январь</p>
+                  <p class="month-name">Февраль</p>
+                  <p class="month-name">Март</p>
+              </div>
+              <div class="row__month-picker">
+                  <p class="month-name">Апрель</p>
+                  <p class="month-name">Май</p>
+                  <p class="month-name">Июнь</p>
+              </div>
+              <div class="row__month-picker">
+                  <p class="month-name">Июль</p>
+                  <p class="month-name">Август</p>
+                  <p class="month-name">Сентябрь</p>
+              </div>
+              <div class="row__month-picker">
+                  <p class="month-name">Октябрь</p>
+                  <p class="month-name">Ноябрь</p>
+                  <p class="month-name">Декабрь</p>
+              </div>
+          </div>
+          <div class="day-picker hide">
+              <div class="month-switcher">
+                  <img src="/src/img/arrow-down.svg" alt="" style="transform: rotate(90deg)" class="left">
+                  <p>Январь 2002</p>
+                  <img src="/src/img/arrow-down.svg" alt="" style="transform: rotate(270deg)" class="right">
+              </div>
+              <div class="row__day-picker">
+                  <p class="day-number">1</p>
+                  <p class="day-number">2</p>
+                  <p class="day-number">3</p>
+                  <p class="day-number">4</p>
+                  <p class="day-number">5</p>
+                  <p class="day-number">6</p>
+                  <p class="day-number">7</p>
+              </div>
+              <div class="row__day-picker">
+                  <p class="day-number">8</p>
+                  <p class="day-number">9</p>
+                  <p class="day-number">10</p>
+                  <p class="day-number">11</p>
+                  <p class="day-number">12</p>
+                  <p class="day-number">13</p>
+                  <p class="day-number">14</p>
+              </div>
+              <div class="row__day-picker">
+                  <p class="day-number">15</p>
+                  <p class="day-number">16</p>
+                  <p class="day-number">17</p>
+                  <p class="day-number">18</p>
+                  <p class="day-number">19</p>
+                  <p class="day-number">20</p>
+                  <p class="day-number">21</p>
+              </div>
+              <div class="row__day-picker">
+                  <p class="day-number">22</p>
+                  <p class="day-number">23</p>
+                  <p class="day-number">24</p>
+                  <p class="day-number">25</p>
+                  <p class="day-number">26</p>
+                  <p class="day-number">27</p>
+                  <p class="day-number">28</p>
+              </div>
+              <div class="row__day-picker last last-28"></div>
+              <div class="row__day-picker last last-29">
+                  <p class="day-number">29</p>
+              </div>
+              <div class="row__day-picker last last-30">
+                  <p class="day-number">29</p>
+                  <p class="day-number">30</p>
+              </div>
+              <div class="row__day-picker last last-31">
+                  <p class="day-number">29</p>
+                  <p class="day-number">30</p>
+                  <p class="day-number">31</p>
+              </div>
+          </div>
+      </div>
+      <form action="">
+          <input type="date" name="birthday" id="birthday" hidden>
+      </form>
+    </div>
+    <div class="input-text-group">
+      <input type="input" class="input-field" placeholder="" name="tg" id='tg'/>
+      <label for="tg" class="input-label">
+          <div class="label-text">Телеграм</div>
+          <div class="remove-border"></div>
+      </label>
+      <div class="error-msg"><small></small></div>
+    </div>
+    <div class="input-text-group">
+      <input type="input" class="input-field" placeholder="" name="phone-number" id='phone-number'/>
+      <label for="phone-number" class="input-label">
+          <div class="label-text">Номер телефона</div>
+          <div class="remove-border"></div>
+      </label>
+      <div class="error-msg"><small></small></div>
+    </div>
+    <div class="input-text-group">
+      <input type="input" class="input-field" placeholder="" name="about-me" id='about-me'/>
+      <label for="fullname" class="input-label">
+          <div class="label-text">О себе</div>
+          <div class="remove-border"></div>
+      </label>
+      <div class="error-msg"><small></small></div>
+    </div>
+    <small class="gray">Например: Редко готовлю, но люблю ботать на кухне по ночам. Хочу завести собаку. Очень люблю читать, играть в хорроры и смотреть аниме. Открыт к общению и взаимопомощи :)</small>
+</div>
+<div class="hide">
+    <form id=" " action="" method="post">{{ csrf_token }}{{ form }}</form>
+</div>
+{% endblock %}
+
+{% block text_stage_content %}
+<b>Мы совсем ничего про тебя не знаем</b>
+<br>
+<small>Расскажи о себе. <br>Люди пишут тем, кому доверяют. Тем более при поиске соседа</small>
+{% endblock %}
+{% block smile_stage_content %}
+<img src="{% static '/img/sad-smile.svg' %}" alt="">
+{% endblock %}

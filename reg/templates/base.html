@@ -1,0 +1,121 @@
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{% block title %}Помогите{% endblock %}</title>
+</head>
+<body>
+  <header>
+    <img src="{% static 'img/logo.svg' %}">
+    <div class="header-right">
+      <a class="button secondary" href="/exit">Выйти из аккаунта</a>
+  </header>
+  <div class="main">
+    <div class="upper-part">
+        <button class="button secondary">{% block nav_button_text %}{% endblock %}</button>
+        <div class="upper-part__stage">
+            <h3>Создание профиля</h3>
+            <div class="more-info__stage">
+                <b class="gray">/</b>
+                <b class="gray">{% block stage_name %}{% endblock %}</b>
+            </div>
+        </div>
+        <div class="progress-bar">
+            {% block progress_bar_span %}10{% endblock %}
+        </div>
+    </div>
+    <div class="middle-part">
+        <div class="left__middle-part">
+            {% block left_form %}{% endblock %}
+        </div>
+        <div class="right__middle-part">
+            <div class="page-preview">
+                <small>Так будет выглядеть твоя страница</small>
+                <div class="page__page-preview floating">
+                    <div class="left__page">
+                        <div class="img-preview">
+                            <img src="" alt="" sizes="" srcset="">
+                        </div>
+                        <button class="button primary">Показать контакты</button>
+                    </div>
+                    <div class="right__page">
+                        <h3 id="fullname-small"></h3>
+                        <div class="basic-info__right">
+                            <p id="gender-small"></p>
+                            <img src="{% static 'img/Ellipse.svg' %}" alt="">
+                            <p id="age-small"></p>
+                            <img src="{% static 'img/Ellipse.svg' %}" alt="">
+                            <p id="degree-small"></p>
+                        </div>
+                        <div class="show-in-search__right">
+                            <p id="job-small"></p>
+                        </div>
+                        <div class="description__right">
+                            <p id="description-small" class="collapsed"></p>
+                            <div class="expand__description">
+                            <p>Развернуть</p>
+                            <img src="{% static 'img/small-arrow-down.svg' %}" alt="" class="arrow arrow-down">
+                            <img src="{% static 'img/small-arrow-down.svg' %}" alt="" class="arrow arrow-up hide" style="transform: rotate(180deg)">                </div>
+                        </div>
+                        <div class="other-data__right">
+                            <div class="preferences__other-data"><p></p></div>
+                            <div class="price__other-data"><p></p></div>
+                            <div class="metro__other-data"><p></p></div>
+                            <div class="line__other-data"></div>
+                            <div class="mini__other-data">
+                            <div class="habits__mini"><p></p></div>
+                            <div class="neighbor__mini"><p></p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stage">
+                <div class="text__stage">{% block text_stage_content %}{% endblock %}</div>
+                <div class="smile__stage">{% block smile_stage_content %}{% endblock %}</div>
+            </div>
+        </div>
+    </div>
+    <div class="lower-part">
+        <button class="button primary" onclick="submitForm()">Продолжить</button>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-content">
+      <div class="support__footer-content">
+        <h2>Support@homeet.com</h2>
+        <p class="gray">Техническая поддержка</p>
+      </div>
+      <div class="nav__footer-content">
+        <div class="links__nav">
+          <a href=""><p>О сервисе</p></a>
+          <a href=""><p>Контакты</p></a>
+          <a href=""><p>Политика конфиденциальности </p></a>
+        </div>
+        <div class="icons__nav">
+          <a href=""><img src="{% static "img/tg.svg" %}" alt=""></a>
+          <a href=""><img src="{% static "img/vk.svg" %}" alt=""></a>
+        </div>
+      </div>
+      <div class="breaker__footer-content"></div>
+      <div class="other__footer-content">
+        <div class="official__other">
+          <small class="gray">Предложение не является публичной офертой. </small>
+          <br>
+          <small class="gray">Сервис не несет ответственности за действия пользователей, достоверность информации и т.д.</small>
+        </div>
+        <div class="madein__other">
+          <small class="gray">Сделано в </small>
+          <small style="color:#5D5B66">бвср</small>
+        </div>
+      </div>
+    </div>
+    <div class="rectangle__footer">
+      
+    </div>
+  </footer>
+</body>
+<script src="{% static '/js/script.js' %}"></script>
+</html>

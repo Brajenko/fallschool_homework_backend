@@ -1,0 +1,877 @@
+  /* ШРИФТ */
+  @font-face {
+    font-family: 'Museo Sans Cyrl';
+    src: url("../fonts/MuseoSansCyrl700.otf") format("opentype");
+    font-weight: 700;
+  }
+
+  @font-face {
+    font-family: 'Museo Sans Cyrl';
+    src: url("../fonts/MuseoSansCyrl500.ttf") format("opentype");
+    font-weight: 500;
+  }
+  
+  h2 {
+    font-family: Museo Sans Cyrl;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: -0.02em;
+    color: #7953C3;
+  }
+
+  h3 {
+    font-family: Museo Sans Cyrl;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 0%;
+  }
+
+  b {
+    font-family: Museo Sans Cyrl;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+  p {
+    font-family: Museo Sans Cyrl;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  small {
+    font-family: Museo Sans Cyrl;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  .gray {
+    color: #CCCCCC;
+  }
+
+  .collapsed {
+    height: 1.2em;
+    overflow: hidden;
+  }
+
+  /* ЭЛЕМЕНТЫ ФОРМЫ */
+  .input-text-group {
+    position: relative;
+    width: 20em;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 16px 12px;
+    border-radius: 8px;
+    background: #F4F4F6;
+    border: 0;
+    outline: 0;
+    font-family: Museo Sans Cyrl;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+  
+    &::placeholder {
+      color: transparent;
+    }
+    
+    /* Лейбл без текста и не в фокусе */
+    &:placeholder-shown ~ .input-label {
+      position: absolute;
+      top: 1em;
+      left: 1em;
+      text-align: left;
+      cursor: text;
+      color: #A1A6B1;
+      font-family: Museo Sans Cyrl;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 24px;
+      letter-spacing: 0em;
+    }
+  }
+  
+  /* Лейбл без фокуса сверху */
+  .input-label {
+    position: absolute;
+    top: -0.8em;
+    left: 1em;
+    display: flex;
+    justify-content: center;
+    transition: 0.2s;
+    color: #5D5B66;
+    font-family: Museo Sans Cyrl;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 20px;
+  }
+  
+  /* Лейбл с фокусом сверху */
+  .input-field:focus {
+    ~ .input-label {
+      position: absolute;
+      top: -0.8em;
+      left: 1em;
+      transition: 0.2s;
+      color: #5D5B66;
+      text-align: left;
+      font-family: Museo Sans Cyrl;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 20px;
+    }
+  }
+  
+  /* invalid */
+  .input-field.invalid {
+    background-color: #fff2f2;
+    border: 1px solid #FF0000;
+    ~ .input-label {
+      color: #FF0000
+    }
+    &:placeholder-shown ~ .input-label {
+      color: #FF0000;
+    }
+  }
+  
+  .remove-border {  
+    position: absolute;
+    background: #fff2f2;
+    width: 100%;
+    height: 1px;
+    top: 0.8em;
+    padding: 0px 2px;
+  }
+  
+  .label-text {
+    position: relative;
+    z-index: 999999999;
+  }
+  
+  .input-field.invalid:focus {
+    background-color: #fff2f2;
+    border: 1px solid #FF0000;
+    ~ .input-label {
+      color: #FF0000
+    }
+  }
+  
+  .error-msg {
+    display: flex;  
+    color: red;
+  }
+
+  .input-text-group .error-msg {
+    justify-content: end;
+  }
+
+  .input-radio-group {
+    align-items: center;
+  }
+
+  /* РАДИО (код спиздил) */
+
+  .input-radio-group input[type=radio] {
+    display: none;
+  }
+
+  .input-radio-group label {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 25px;
+    margin-right: 0;
+    line-height: 150%;
+    user-select: none;
+  }
+  .input-radio-group label:before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 0;
+    bottom: 22px;
+    background: url(../img/radio-unchecked.svg) 0 0 no-repeat;
+  }
+   
+  /* Checked */
+  .input-radio-group input[type=radio]:checked + label:before {
+    background: url(../img/radio-checked.svg) 0 0 no-repeat;
+  }
+   
+  /* Hover */
+  .input-radio-group label:hover:before {
+    filter: brightness(120%);
+  }
+
+  .input-radio-group.invalid {
+    color: red;
+  }
+
+  /* БОРДЕРЫ */
+  .floating {
+    box-shadow: 0px 1.1335145235061646px 4.293615818023682px 0px #855E9807;
+    box-shadow: 0px 2.866743326187134px 10.85887622833252px 0px #855E980A;
+    box-shadow: 0px 5.8478875160217285px 22.15108871459961px 0px #855E980D;
+    box-shadow: 0px 5.8478875160217285px 22.15108871459961px 0px #855E980D;
+
+  }
+
+  .rounded {
+    border-radius: 8px;
+  }
+
+  /* ЕЩЕ ОДНО РАДИО ТОЛЬКО В ЛИНИЮ КВАДРАТИКИ ТАКИЕ */
+  .radio-inline {
+    background: #F4F4F6;
+    padding: 8px;
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .radio-inline input {
+    width: auto;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 8px 14px;
+    background: #F4F4F6;
+    color: #bdbdbdbd;
+    transition: all 100ms linear;
+    color: #040013;
+    font-family: Museo Sans Cyrl;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 0em;
+  }
+  
+  .radio-inline input:checked {
+    background-color: #7953C3;
+    color: #fff;
+  }
+
+  .radio-inline input:before {
+    content: attr(label);
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Чекбокс */
+  input[type="checkbox"] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+  
+  input[type="checkbox"]+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+  }
+  
+  input[type="checkbox"]+label::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+  }
+  
+  
+  input[type="checkbox"]:checked+label::before {
+    background-image: url("../img/checkbox-checked.svg");
+  }
+  
+  input[type="checkbox"]:checked+label:hover::before {
+    background-image: url("../img/checkbox-checked-focus.svg");
+  }
+  
+  input[type="checkbox"]:not(:checked)+label::before {
+    background-image: url("../img/checkbox-unchecked.svg");
+  }
+  
+  input[type="checkbox"]:not(:checked)+label:hover::before {
+    background-image: url("../img/checkbox-unchecked-focus.svg");
+  }  
+  
+
+  /* Прогресс бар */
+  .progress-bar {
+    background-color: #F4F4F6;
+    width: 100%;
+    height: 2px;
+  }
+
+  .progress-bar > span {
+    display: block;
+    height: 100%;
+    background-color: #CDBDDB;
+  }
+
+ /* Dropdowns!!! */
+  .dropdown-container {
+    width: 100%;
+  }
+
+  .dropdown {
+    padding: 16px;
+    background-color: #F4F4F6;
+    color: #A1A6B1;
+    border: 0;
+    border-radius: 8px;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    position: inherit;
+    width: 100%;
+  }
+
+  .dropdown-content {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 8px;
+    top: 100%;
+    right: 0%;
+    width: 100%;
+    max-height: 352px;
+    overflow: auto;
+    z-index: 1;
+    box-shadow: 0px 1.1335145235061646px 4.293615818023682px 0px #855E9807;
+    box-shadow: 0px 2.866743326187134px 10.85887622833252px 0px #855E980A;
+    box-shadow: 0px 5.8478875160217285px 22.15108871459961px 0px #855E980D;
+    box-shadow: 0px 5.8478875160217285px 22.15108871459961px 0px #855E980D;
+  }
+
+  .dropdown-content::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .dropdown-content::-webkit-scrollbar-track {
+    border-radius: 4px;
+  }
+  
+  .dropdown-content::-webkit-scrollbar-thumb {
+    background: #CDBDDB; 
+    border-radius: 4px;
+  }
+
+  .dropdown-elem {
+    text-align: left;
+    color: black;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-elem:hover {
+    background-color: #F4F4F6;
+  }
+
+  .dropdown-elem.picked {
+    color: #7953C3;
+  }
+
+  .with-picked {
+    color: black;
+  }
+
+  .dropdown-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .dropdown-part {
+    position: absolute;
+    bottom: 0;
+    right: 7%;
+  }
+
+  /* HEADER */
+  /* не знал, как сделать header во всю ширину))) */
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+header {
+    display: flex;
+    padding: 20px 40px;
+    margin-bottom: 60px;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    background: #FFF;
+    box-shadow: 0px 1.13351px 4.29362px 0px rgba(133, 94, 152, 0.03), 0px 2.86674px 10.85888px 0px rgba(133, 94, 152, 0.04), 0px 5.84789px 22.15109px 0px rgba(133, 94, 152, 0.05), 0px 5.84789px 22.15109px 0px rgba(133, 94, 152, 0.05);    
+  }
+
+  .header-right {
+    float: right;
+  }
+
+  /* Основной контент */
+  .main {
+    gap: 40px;
+    align-self: center;
+    width: 70%;
+    margin-bottom: 160px;
+  }
+
+  /* Верхняя часть */
+  .upper-part {
+    align-self: left;
+  }
+
+  .upper-part__stage {
+    display: flex;
+  }
+
+  .more-info__stage {
+    align-self: center;
+    margin-left: 16px;
+    height: 100%;
+  }
+
+
+  .more-info__stage b {
+    margin-right: 16px;
+  }
+
+  /* Центральная часть */
+  .middle-part {
+    display: flex;
+    padding-top: 40px;
+    gap: 60px;
+    justify-content: center;
+  }
+
+  .left__middle-part {
+    
+  }
+
+  .right__middle-part {
+  
+  }
+
+  .photo-loader {
+    border: 1px dashed #EBEBEB;
+    border-radius: 16px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 32px;
+    padding-right: 32px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .photo-loader b {
+    margin-bottom: 16px;
+  }
+
+  .photo-loader small {
+    margin-top: 20px;
+  }
+
+  .page__page-preview {
+    padding: 20px;
+    display: flex;
+    gap: 28px;
+    border-radius: 32px;
+  }
+
+  .img-preview {
+    width: 140px;
+    height: 140px;
+    border: 1px dashed #D9D1E0;
+    border-radius: 16px;
+  }
+
+  .left__page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  /* КНОПКИ */
+  .button {
+    padding: 8px 16px;
+    font-size: 16px;
+    border-radius: 8px;
+    text-decoration: none;
+  }
+
+  .button.primary {
+    background-color: #7953C3;
+    color: white;
+    border: 0px;
+  }
+
+  .button.secondary {
+    background-color: white;
+    color: #7953C3;
+    border: 2px solid #7953C3;
+  }
+
+  .page-preview h3 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0em;
+  }
+
+  .page-preview p {
+    font-family: Museo Sans Cyrl;
+    font-size: 9px;
+    font-weight: 300;
+    line-height: 11px;
+    letter-spacing: 0em;
+  }
+
+  .basic-info__right {
+    display:flex;
+    gap: 4px;
+  }
+
+  .right__page p:empty {
+    background-color: #EEEEF1;
+    width: 120px;
+    height: 10px;
+    border-radius: 4px;
+  }
+
+  .description__right {
+    display: flex;
+    gap: 16px;
+  }
+
+  .expand__description {
+    display: none;
+    align-items: baseline;
+    gap: 4px;
+  }
+
+  .expand__description p {
+    color: #7953C3;
+  }
+
+  .other-data__right {
+    padding: 12px;
+    padding-right: 20px;
+    background-color: #F4F4F6;
+    border-radius: 8px;
+  }
+
+  .preferences__other-data {
+    margin-bottom: 4px;
+  }
+
+  .price__other-data {
+    margin-bottom: 2px;
+  }
+
+  .line__other-data {
+    width: 100%;
+    height: 1px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    background-color: #CCCCCC;
+  }
+
+  .mini__other-data {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-right: 4px;
+    display: flex;
+    gap: 4px;
+  }
+
+  .stage {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 16px;
+    padding-left: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .smile__stage p {
+    /* font-family: Museo Sans Cyrl;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 40px;
+    letter-spacing: -0.01em;
+    text-align: center; */
+  }
+
+  .form__left {
+    margin-top: 40px;
+  }
+
+  .form__left {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .education__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .input-text-group {
+    margin-top: 24px;
+  }
+
+  .input-radio-group {
+    gap: 16px;
+    display: flex;
+  }
+
+  .var__input-radio-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .lower-part {
+    display: flex;
+    justify-content: end;
+    .button.primary {
+      padding-left: 64px;
+      padding-right: 64px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+  }
+
+  .footer-content {
+    padding-bottom: 64px;
+    padding-top: 120px;
+    padding-left: 200px;
+    padding-right: 200px;
+    gap: 40px;
+  }
+
+  .support__footer-content h2 {
+    margin-bottom: 8px;
+  }
+
+  .nav__footer-content {  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+    
+  .links__nav {
+    gap: 32px;
+    display: flex;
+    justify-content: start;
+    padding-right: 40px;
+  }
+
+  .icons__nav {
+    gap: 8px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #040013;
+  }
+
+  .breaker__footer-content {
+    width: 100%;
+    height: 1px;
+    background-color: #7953C3;
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+
+  .other__footer-content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .madein__other {
+    align-self: flex-end;
+  }
+
+  .rectangle__footer {
+    width: 100%;
+    height: 12px;
+    background-color: #7953C3;
+  }
+
+  .input-date {
+    background: #F4F4F6;
+    color: #A1A6B1;
+    width: 200px;
+    padding: 12px;
+    padding-right: 8px;
+    gap: 8px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+  }
+  
+  .input-date:hover {
+    color: #040013;
+  }
+  
+  .input-date p {
+    margin: 0;
+    text-align: center;
+  }
+  
+  .calendar-img {
+    padding: 8px;
+    background-color: white;
+    border-radius: 4px;
+  }
+  
+  .year-picker {  
+    background-color: white;
+    padding: 16px;
+    border-radius: 8px;
+    max-width: 280px;
+    max-height: 260px;
+    overflow: auto;
+  }
+  
+  .row__year-picker {
+    display: flex;
+    gap: 4px
+  }
+  
+  .year-number {
+    padding: 4px 14px;
+    margin: 12px 0px;
+    user-select: none;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  
+  .year-number:hover {
+    background-color: #EEEEF1;
+  }
+  
+  .year-picker::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .year-picker::-webkit-scrollbar-track {
+    border-radius: 4px;
+  }
+  
+  .year-picker::-webkit-scrollbar-thumb {
+    background: #CDBDDB; 
+    border-radius: 4px;
+  }
+  
+  .month-picker {
+    background-color: white;
+    width: fit-content;
+    padding: 16px;
+    border-radius: 8px;
+  }
+  
+  .row__month-picker {
+    display: flex;
+    gap: 4px;
+  
+  }
+  
+  .month-name {
+    padding: 4px 14px;
+    margin: 8px 0px;
+    border-radius: 8px;
+    user-select: none;
+    cursor: pointer;
+    width: 80px;
+    text-align: center;
+  }
+  
+  .month-name:hover {
+    background-color: #EEEEF1;
+  }
+  
+  .year-switcher {
+    display: flex;
+    justify-content: space-between;
+    user-select: none;
+  }
+  
+  .year-switcher img {
+    cursor: pointer;
+  }
+  
+  .month-switcher img {
+    cursor: pointer;
+  }
+  
+  .day-picker {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    background-color: white;
+    width: fit-content;
+    padding: 16px;
+    border-radius: 8px;
+  }
+  
+  .row__day-picker {
+    display: flex;
+    gap: 4px;
+  
+  }
+  
+  .day-number {
+    margin: 0%;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    user-select: none;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .day-number:hover {
+    background-color: #EEEEF1
+  }
+  
+  .month-switcher {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .hide {
+    display: none
+  }
