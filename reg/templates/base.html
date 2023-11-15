@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>{% block title %}Помогите{% endblock %}</title>
+    <title>Титл</title>
 </head>
 <body>
   <header>
@@ -12,23 +12,209 @@
     <div class="header-right">
       <a class="button secondary" href="/exit">Выйти из аккаунта</a>
   </header>
-  <div class="main">
+  <div class="main page1">
     <div class="upper-part">
-        <button class="button secondary">{% block nav_button_text %}{% endblock %}</button>
+        <button class="button secondary">На главную</button>
         <div class="upper-part__stage">
             <h3>Создание профиля</h3>
             <div class="more-info__stage">
                 <b class="gray">/</b>
-                <b class="gray">{% block stage_name %}{% endblock %}</b>
+                <b class="gray">О себе</b>
             </div>
         </div>
         <div class="progress-bar">
-            {% block progress_bar_span %}10{% endblock %}
+            <span style="width:10%"></span>
         </div>
     </div>
     <div class="middle-part">
         <div class="left__middle-part">
-            {% block left_form %}{% endblock %}
+          <div class="form__left">
+            <div class="input-text-group">
+              <input type="input" class="input-field" placeholder="" name="fullname" id='fullname'/>
+              <label for="fullname" class="input-label">
+                  <div class="label-text">Имя и фамилия</div>
+                  <div class="remove-border"></div>
+              </label>
+              <div class="error-msg"><small></small></div>
+            </div>
+            <div class="input-radio-group">
+              <div class="var__input-radio-group">
+                <input type="radio" name="gender" id="male" value="male">
+                <label for="male"><p>Парень</p></label>
+              </div>
+              <div class="var__input-radio-group">
+                <input type="radio" name="gender" id="female" value="female">
+                <label for="female"><p>Девушка</p></label>
+              </div>
+              <div class="error-msg"><small></small></div>
+            </div>
+            <div class="input-date-group">
+              <div class="input-date">
+                  <p class="gray">Дата рождения</p>
+                  <img src="/src/img/calendar.svg" class="calendar-img">
+              </div>
+              <div class="date-picker hide">
+                  <div class="year-picker hide">
+                      <div class="row__year-picker">
+                          <p class="year-number">1981</p>
+                          <p class="year-number">1982</p>
+                          <p class="year-number">1983</p>
+                          <p class="year-number">1984</p>
+                      </div>
+                      <div class="row__year-picker">
+                          <p class="year-number">1985</p>
+                          <p class="year-number">1986</p>
+                          <p class="year-number">1987</p>
+                          <p class="year-number">1988</p>
+                      </div>
+                      <div class="row__year-picker">
+                          <p class="year-number">1989</p>
+                          <p class="year-number">1990</p>
+                          <p class="year-number">1991</p>
+                          <p class="year-number">1992</p>
+                      </div>
+                      <div class="row__year-picker">
+                          <p class="year-number">1993</p>
+                          <p class="year-number">1994</p>
+                          <p class="year-number">1995</p>
+                          <p class="year-number">1996</p>
+                      </div>
+                      <div class="row__year-picker">
+                          <p class="year-number">1997</p>
+                          <p class="year-number">1998</p>
+                          <p class="year-number">1999</p>
+                          <p class="year-number">2000</p>
+                      </div>
+                      <div class="row__year-picker">
+                          <p class="year-number">2001</p>
+                          <p class="year-number">2002</p>
+                          <p class="year-number">2003</p>
+                          <p class="year-number">2004</p>
+                      </div>
+                      <div class="row__year-picker">
+                          <p class="year-number">2005</p>
+                          <p class="year-number">2006</p>
+                          <p class="year-number">2007</p>
+                          <p class="year-number">2008</p>
+                      </div>
+                  </div>
+                  <div class="month-picker hide">
+                      <div class="year-switcher">
+                          <img src="/src/img/arrow-down.svg" alt="" style="transform: rotate(90deg)" class="left">
+                          <p>2002</p>
+                          <img src="/src/img/arrow-down.svg" alt="" style="transform: rotate(270deg)" class="right">
+                      </div>
+                      <div class="row__month-picker">
+                          <p class="month-name">Январь</p>
+                          <p class="month-name">Февраль</p>
+                          <p class="month-name">Март</p>
+                      </div>
+                      <div class="row__month-picker">
+                          <p class="month-name">Апрель</p>
+                          <p class="month-name">Май</p>
+                          <p class="month-name">Июнь</p>
+                      </div>
+                      <div class="row__month-picker">
+                          <p class="month-name">Июль</p>
+                          <p class="month-name">Август</p>
+                          <p class="month-name">Сентябрь</p>
+                      </div>
+                      <div class="row__month-picker">
+                          <p class="month-name">Октябрь</p>
+                          <p class="month-name">Ноябрь</p>
+                          <p class="month-name">Декабрь</p>
+                      </div>
+                  </div>
+                  <div class="day-picker hide">
+                      <div class="month-switcher">
+                          <img src="/src/img/arrow-down.svg" alt="" style="transform: rotate(90deg)" class="left">
+                          <p>Январь 2002</p>
+                          <img src="/src/img/arrow-down.svg" alt="" style="transform: rotate(270deg)" class="right">
+                      </div>
+                      <div class="row__day-picker">
+                          <p class="day-number">1</p>
+                          <p class="day-number">2</p>
+                          <p class="day-number">3</p>
+                          <p class="day-number">4</p>
+                          <p class="day-number">5</p>
+                          <p class="day-number">6</p>
+                          <p class="day-number">7</p>
+                      </div>
+                      <div class="row__day-picker">
+                          <p class="day-number">8</p>
+                          <p class="day-number">9</p>
+                          <p class="day-number">10</p>
+                          <p class="day-number">11</p>
+                          <p class="day-number">12</p>
+                          <p class="day-number">13</p>
+                          <p class="day-number">14</p>
+                      </div>
+                      <div class="row__day-picker">
+                          <p class="day-number">15</p>
+                          <p class="day-number">16</p>
+                          <p class="day-number">17</p>
+                          <p class="day-number">18</p>
+                          <p class="day-number">19</p>
+                          <p class="day-number">20</p>
+                          <p class="day-number">21</p>
+                      </div>
+                      <div class="row__day-picker">
+                          <p class="day-number">22</p>
+                          <p class="day-number">23</p>
+                          <p class="day-number">24</p>
+                          <p class="day-number">25</p>
+                          <p class="day-number">26</p>
+                          <p class="day-number">27</p>
+                          <p class="day-number">28</p>
+                      </div>
+                      <div class="row__day-picker last last-28"></div>
+                      <div class="row__day-picker last last-29">
+                          <p class="day-number">29</p>
+                      </div>
+                      <div class="row__day-picker last last-30">
+                          <p class="day-number">29</p>
+                          <p class="day-number">30</p>
+                      </div>
+                      <div class="row__day-picker last last-31">
+                          <p class="day-number">29</p>
+                          <p class="day-number">30</p>
+                          <p class="day-number">31</p>
+                      </div>
+                  </div>
+              </div>
+              <form action="">
+                  <input type="date" name="birthday" id="birthday" hidden>
+              </form>
+            </div>
+            <div class="input-text-group">
+              <input type="input" class="input-field" placeholder="" name="tg" id='tg'/>
+              <label for="tg" class="input-label">
+                  <div class="label-text">Телеграм</div>
+                  <div class="remove-border"></div>
+              </label>
+              <div class="error-msg"><small></small></div>
+            </div>
+            <div class="input-text-group">
+              <input type="input" class="input-field" placeholder="" name="phone-number" id='phone-number'/>
+              <label for="phone-number" class="input-label">
+                  <div class="label-text">Номер телефона</div>
+                  <div class="remove-border"></div>
+              </label>
+              <div class="error-msg"><small></small></div>
+            </div>
+            <div class="input-text-group">
+              <input type="input" class="input-field" placeholder="" name="about-me" id='about-me'/>
+              <label for="fullname" class="input-label">
+                  <div class="label-text">О себе</div>
+                  <div class="remove-border"></div>
+              </label>
+              <div class="error-msg"><small></small></div>
+            </div>
+            <small class="gray">Например: Редко готовлю, но люблю ботать на кухне по ночам. Хочу завести собаку. Очень люблю читать, играть в хорроры и смотреть аниме. Открыт к общению и взаимопомощи :)</small>
+        </div>
+        <div class="hide">
+            <form id="django-form" action="" method="post">{{ csrf_token }}{{ form }}</form>
+        </div>
         </div>
         <div class="right__middle-part">
             <div class="page-preview">
@@ -73,13 +259,177 @@
                 </div>
             </div>
             <div class="stage">
-                <div class="text__stage">{% block text_stage_content %}{% endblock %}</div>
-                <div class="smile__stage">{% block smile_stage_content %}{% endblock %}</div>
+                <div class="text__stage"><b>Мы совсем ничего про тебя не знаем</b>
+                  <br>
+                  <small>Расскажи о себе. <br>Люди пишут тем, кому доверяют. Тем более при поиске соседа</small>
+                </div>
+                <div class="smile__stage"><img src="{% static '/img/sad-smile.svg' %}" alt=""></div>
             </div>
         </div>
     </div>
     <div class="lower-part">
-        <button class="button primary" onclick="submitForm()">Продолжить</button>
+        <button class="button primary" onclick="submitForm1()">Продолжить</button>
+    </div>
+  </div>
+  <div class="main page2 hide">
+    <div class="upper-part">
+        <button class="button secondary">Назад</button>
+        <div class="upper-part__stage">
+            <h3>Создание профиля</h3>
+            <div class="more-info__stage">
+                <b class="gray">/</b>
+                <b class="gray">Образование</b>
+            </div>
+        </div>
+        <div class="progress-bar">
+           <span style="width:33%"></span>
+        </div>
+    </div>
+    <div class="middle-part">
+        <div class="left__middle-part">
+          <div class="form__left">
+            <div class="input-radio-group">
+              <div class="var__input-radio-group">
+                <input type="radio" name="role" id="student" value="student">
+                <label for="student"><p>Студент / выпускник</p></label>
+              </div>
+              <div class="var__input-radio-group">
+                <input type="radio" name="role" id="teacher" value="teacher">
+                <label for="teacher"><p>Сотрудник</p></label>
+              </div>
+            </div>
+            <div class="education__form">
+              <div class="inline-radio-group">
+                <small class="gray">Курс</small>
+                <div class="radio-inline" id="course-input">
+                  <input label="1" type="radio" id="course1" name="course" value="1">
+                  <input label="2" type="radio" id="course2" name="course" value="2">
+                  <input label="3" type="radio" id="course3" name="course" value="3">
+                  <input label="4" type="radio" id="course4" name="course" value="4">
+                  <input label="5" type="radio" id="course5" name="course" value="5">
+                  <input label="6" type="radio" id="course6" name="course" value="6">
+                </div>
+                <div class="custom-checkbox">
+                  <input type="checkbox" name="is-graduate" id="is-graduate">
+                  <label for="is-graduate"><p>Уже окончил вышку</p></label>
+                </div>
+              </div>
+              <div class="dropdown-container">
+                <small class="gray">Ступень образования</small>
+                <button class="dropdown" type="button" id="level-input">
+                    <div class="dropdown-text">Ступень образования</div>
+                    <img src="/src/img/arrow-down.svg" alt="" class="arrow arrow-down">
+                    <img src="/src/img/arrow-up.svg" alt="" class="arrow arrow-up hide">
+                    <div class="dropdown-part hide">
+                        <img src="/src/img/dropdown-part.svg" alt="">
+                    </div>
+                    <div class="dropdown-content hide">
+                        <a class="dropdown-elem">Бакалавриат</a>
+                        <a class="dropdown-elem">Магистратура</a>
+                        <a class="dropdown-elem">Аспирантура</a>
+                    </div>
+                </button>
+                <div class="error-msg"><small></small></div>
+              </div>
+              <div class="dropdown-container">
+                <small class="gray">Факультет</small>
+                <button class="dropdown" type="button" id="faculty-input">
+                    <div class="dropdown-text">Факультет</div>
+                    <img src="/src/img/arrow-down.svg" alt="" class="arrow arrow-down">
+                    <img src="/src/img/arrow-up.svg" alt="" class="arrow arrow-up hide">
+                    <div class="dropdown-part hide">
+                        <img src="/src/img/dropdown-part.svg" alt="">
+                    </div>
+                    <div class="dropdown-content hide">
+                        <a class="dropdown-elem">Факультет математики</a>
+                        <a class="dropdown-elem">Факультет экономических наук</a>
+                        <a class="dropdown-elem">Московский институт электроники и математики им. А.Н. Тихонова</a>
+                        <a class="dropdown-elem">Факультет компьютерных наук</a>
+                        <a class="dropdown-elem">Высшая школа бизнеса</a>
+                        <a class="dropdown-elem">Факультет права</a>
+                        <a class="dropdown-elem">Высшая школа юриспруденции и администри­рования</a>
+                        <a class="dropdown-elem">Факультет гуманитарных наук</a>
+                        <a class="dropdown-elem">Факультет социальных наук</a>
+                        <a class="dropdown-elem">Факультет креативных индустрий</a>
+                        <a class="dropdown-elem">Факультет мировой экономики и мировой политики</a>
+                        <a class="dropdown-elem">Факультет физики</a>
+                        <a class="dropdown-elem">Международный институт экономики и финансов</a>
+                        <a class="dropdown-elem">Факультет городского и регионального развития</a>
+                        <a class="dropdown-elem">Факультет химии</a>
+                        <a class="dropdown-elem">Факультет биологии и биотехнологии</a>
+                        <a class="dropdown-elem">Факультет географии и гео­ин­фор­ма­ци­он­ных технологий</a>
+                        <a class="dropdown-elem">Школа иностранных языков</a>
+                        <a class="dropdown-elem">Институт статистических исследований и экономики знаний</a>
+                        <a class="dropdown-elem">Банковский институт</a>
+                        <a class="dropdown-elem">Школа инноватики и пред­при­ни­мательства</a>
+                    </div>
+                </button>
+                <div class="error-msg"><small></small></div>
+              </div>
+            </div>
+            <div class="input-text-group">
+              <input type="input" class="input-field" placeholder="" name="job" id='job' required />
+              <label for="job" class="input-label">
+                  <div class="label-text">Работа</div>
+                  <div class="remove-border"></div>
+              </label>
+              <div class="error-msg"><small></small></div>
+            </div>
+          </div>
+        </div>
+        <div class="right__middle-part">
+            <div class="page-preview">
+                <small>Так будет выглядеть твоя страница</small>
+                <div class="page__page-preview floating">
+                    <div class="left__page">
+                        <div class="img-preview">
+                            <img src="" alt="" sizes="" srcset="">
+                        </div>
+                        <button class="button primary">Показать контакты</button>
+                    </div>
+                    <div class="right__page">
+                        <h3 id="fullname-small"></h3>
+                        <div class="basic-info__right">
+                            <p id="gender-small"></p>
+                            <img src="{% static 'img/Ellipse.svg' %}" alt="">
+                            <p id="age-small"></p>
+                            <img src="{% static 'img/Ellipse.svg' %}" alt="">
+                            <p id="degree-small"></p>
+                        </div>
+                        <div class="show-in-search__right">
+                            <p id="job-small"></p>
+                        </div>
+                        <div class="description__right">
+                            <p id="description-small" class="collapsed"></p>
+                            <div class="expand__description">
+                            <p>Развернуть</p>
+                            <img src="{% static 'img/small-arrow-down.svg' %}" alt="" class="arrow arrow-down">
+                            <img src="{% static 'img/small-arrow-down.svg' %}" alt="" class="arrow arrow-up hide" style="transform: rotate(180deg)">                </div>
+                        </div>
+                        <div class="other-data__right">
+                            <div class="preferences__other-data"><p></p></div>
+                            <div class="price__other-data"><p></p></div>
+                            <div class="metro__other-data"><p></p></div>
+                            <div class="line__other-data"></div>
+                            <div class="mini__other-data">
+                            <div class="habits__mini"><p></p></div>
+                            <div class="neighbor__mini"><p></p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stage">
+                <div class="text__stage"><b>Расскажи где ты учишься</b>
+                  <br>
+                  <small>Часто студенты ищут соседей по схожим интересам</small>
+                </div>
+                <div class="smile__stage"><img src="{% static '/img/happy-smile.svg' %}" alt=""></div>
+            </div>
+        </div>
+    </div>
+    <div class="lower-part">
+        <button class="button primary" onclick="submitForm2()">Продолжить</button>
     </div>
   </div>
   <footer>

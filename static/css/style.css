@@ -172,6 +172,10 @@
     justify-content: end;
   }
 
+  .dropdown-container .error-msg {
+    justify-content: end;
+  }
+
   .input-radio-group {
     align-items: center;
   }
@@ -404,6 +408,12 @@
     position: absolute;
     bottom: 0;
     right: 7%;
+  }
+
+  .dropdown-container.invalid {
+    .dropdown {
+      background-color: #fff2f2;
+    }
   }
 
   /* HEADER */

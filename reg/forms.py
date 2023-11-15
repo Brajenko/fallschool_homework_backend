@@ -11,6 +11,11 @@ class UserInfo(forms.Form):
     tg = forms.CharField(max_length=30)
     phone_number = forms.CharField(max_length=18)
     about = forms.CharField(max_length=400)
+    course = forms.IntegerField()
+    level = forms.CharField(max_length=30)
+    faculty = forms.CharField(max_length=100)
+    work = forms.CharField(max_length=100)
+    
     
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

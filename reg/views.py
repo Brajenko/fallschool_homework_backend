@@ -21,8 +21,4 @@ def first_page(request):
         new_user.about = data['about']
         new_user.save()
         return redirect('page 2')
-    return render(request, 'stage1.html', {'years':YEARS, 'form': UserInfo})
-
-
-def second_page(request):
-    return render(request, 'stage2.html')
+    return render(request, 'base.html', {'years':YEARS, 'form': UserInfo})

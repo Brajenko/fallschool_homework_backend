@@ -30,6 +30,10 @@ const birthdayInput = document.querySelector('#birthday')
 const tgInput = document.querySelector('#tg')
 const phoneInput = document.querySelector('#phone-number')
 const aboutInput = document.querySelector('#about-me')
+const courseInput = document.querySelector('#course-input')
+const levelnput = document.querySelector('#level-input')
+const facultyInput = document.querySelector('#faculty-input')
+const jobInput = document.querySelector('#job')
 
 fullnameInput.addEventListener('input', (ev) => {
     document.querySelector('#fullname-small').innerHTML = fullnameInput.value;
@@ -203,7 +207,7 @@ window.addEventListener('click', (ev) => {
 
 djangoForm = document.querySelector('#django-form')
 
-function validateForm() {
+function validateForm1() {
     validationRes = true;
     // Fullname
     if (fullnameInput.value == '') {
@@ -267,6 +271,52 @@ function validateForm() {
     return validationRes
 }
 
+function validateForm2() {
+    validationRes = true;
+    // course
+    // всегда чтото checked
+
+    // level
+    let checked = false
+    for (let a of levelnput.querySelectorAll(".dropdown-elem")) {
+        if (a.classList.contains('picked')) {checked=True; break;}
+    }
+    if (!checked) {
+        levelnput.parentNode.classList.add('invalid')
+        levelnput.parentNode.querySelector('.error-msg').firstChild.innerText = 'Обязательное поле'
+        validationRes = false
+    }
+    else {
+        levelnput.parentNode.classList.remove('invalid')
+        levelnput.parentNode.querySelector('.error-msg').firstChild.innerText = ''
+    }
+    // faculty
+    checked = false
+    for (let a of facultyInput.querySelectorAll(".dropdown-elem")) {
+        if (a.classList.contains('picked')) {checked=True; break;}
+    }
+    if (!checked) {
+        facultyInput.parentNode.classList.add('invalid')
+        facultyInput.parentNode.querySelector('.error-msg').firstChild.innerText = 'Обязательное поле'
+        validationRes = false;
+    }
+    else {
+        facultyInput.parentNode.classList.remove('invalid')
+        facultyInput.parentNode.querySelector('.error-msg').firstChild.innerText = ''
+    }
+    // jobInput
+    if (jobInput.value == '') {
+        jobInput.classList.add('invalid');
+        jobInput.parentNode.querySelector('.error-msg').firstChild.innerText = 'Обязательное поле'
+        validationRes = false;
+    }
+    else {
+        jobInput.classList.remove('invalid');
+        jobInput.parentNode.querySelector('.error-msg').firstChild.innerText = '';
+    }
+    return validationRes
+}
+
 function copyToDjango() {
     for (let e of djangoForm.childNodes) {
         if (e.name=='fullname') {e.value = fullnameInput.value;}
@@ -275,12 +325,41 @@ function copyToDjango() {
         if (e.name=='tg') {e.value = tgInput.value;}
         if (e.name=='phone_number') {e.value = phoneInput.value;}
         if (e.name=='about') {e.value = aboutInput.value;}
+        if (e.name=='course') {
+            for (let inp of courseInput.querySelectorAll('input')) {
+                if (inp.checked) {
+                    e.value = inp.value
+                }
+            }
+        }
+        if (e.name=='level') {
+            for (inp of levelnput.querySelectorAll('.dropdown-elem')) {
+                if (inp.classList.contains('picked')) {
+                    e.value = inp.innerText
+                }
+            }
+        }
+        if (e.name=='faculty') {
+            for (inp of facultyInput.querySelectorAll('.dropdown-elem')) {
+                if (inp.facultyInput.contains('picked')) {
+                    e.value = inp.innerText
+                }
+            }
+        }
+        if (e.name=='work') {e.value = jobInput.value;}
     }
 }
 
-
-function submitForm() {
-    if (!validateForm()) {return;}
-    copyToDjango();
-    djangoForm.submit();
+const form1 = document.querySelector('.page1')
+const form2 = document.querySelector('.page2')
+function submitForm1() {
+    if (!validateForm1()) {return;}
+    form1.classList.add('hide')
+    form2.classList.remove('hide')
 }
+function subminForm2() {
+    if (!validateForm2()) {return;}
+    copyToDjango()
+    djangoForm.submit()
+}
+
