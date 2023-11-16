@@ -50,9 +50,10 @@
             </div>
             <div class="input-date-group">
               <div class="input-date">
-                  <p class="gray">Дата рождения</p>
-                  <img src="/src/img/calendar.svg" class="calendar-img">
+                  <p>Дата рождения</p>
+                  <img src="{% static 'img/calendar.svg' %}" class="calendar-img">
               </div>
+              <p class="error-msg"></p>
               <div class="date-picker hide">
                   <div class="year-picker hide">
                       <div class="row__year-picker">
@@ -100,9 +101,9 @@
                   </div>
                   <div class="month-picker hide">
                       <div class="year-switcher">
-                          <img src="/src/img/arrow-down.svg" alt="" style="transform: rotate(90deg)" class="left">
+                          <img src="{% static 'img/arrow-down.svg' %}" alt="" style="transform: rotate(90deg)" class="left">
                           <p>2002</p>
-                          <img src="/src/img/arrow-down.svg" alt="" style="transform: rotate(270deg)" class="right">
+                          <img src="{% static 'img/arrow-down.svg' %}" alt="" style="transform: rotate(270deg)" class="right">
                       </div>
                       <div class="row__month-picker">
                           <p class="month-name">Январь</p>
@@ -212,9 +213,6 @@
             </div>
             <small class="gray">Например: Редко готовлю, но люблю ботать на кухне по ночам. Хочу завести собаку. Очень люблю читать, играть в хорроры и смотреть аниме. Открыт к общению и взаимопомощи :)</small>
         </div>
-        <div class="hide">
-            <form id="django-form" action="" method="post">{{ csrf_token }}{{ form }}</form>
-        </div>
         </div>
         <div class="right__middle-part">
             <div class="page-preview">
@@ -318,10 +316,10 @@
                 <small class="gray">Ступень образования</small>
                 <button class="dropdown" type="button" id="level-input">
                     <div class="dropdown-text">Ступень образования</div>
-                    <img src="/src/img/arrow-down.svg" alt="" class="arrow arrow-down">
-                    <img src="/src/img/arrow-up.svg" alt="" class="arrow arrow-up hide">
+                    <img src="{% static 'img/arrow-down.svg' %}" alt="" class="arrow arrow-down">
+                    <img src="{% static 'img/arrow-up.svg' %}" alt="" class="arrow arrow-up hide">
                     <div class="dropdown-part hide">
-                        <img src="/src/img/dropdown-part.svg" alt="">
+                        <img src="{% static 'img/dropdown-part.svg' %}" alt="">
                     </div>
                     <div class="dropdown-content hide">
                         <a class="dropdown-elem">Бакалавриат</a>
@@ -432,6 +430,9 @@
         <button class="button primary" onclick="submitForm2()">Продолжить</button>
     </div>
   </div>
+  <div class="">
+    <form id="django-form" action="" method="post">{{ csrf_token }}{{ form }}</form>
+    </div>
   <footer>
     <div class="footer-content">
       <div class="support__footer-content">

@@ -751,6 +751,15 @@ header {
     user-select: none;
     cursor: pointer;
   }
+
+  .input-date-group.invalid .input-date {
+    background: #fff2f2;
+    border: 1px solid red;
+  }
+
+  .input-date-group.invalid .input-date p {
+    color:red;
+  }
   
   .input-date:hover {
     color: #040013;
@@ -760,6 +769,8 @@ header {
     margin: 0;
     text-align: center;
   }
+
+
   
   .calendar-img {
     padding: 8px;

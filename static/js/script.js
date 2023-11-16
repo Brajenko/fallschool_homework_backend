@@ -236,6 +236,16 @@ function validateForm1() {
         radioGroup.classList.remove('invalid');
         radioGroup.querySelector('.error-msg').firstChild.innerText = ''
     }
+    
+    //date
+    if (!realBDInput.value) {
+        BDInput.parentNode.classList.add('invalid');
+        BDInput.parentNode.querySelector('.error-msg').innerText = 'Обязательное поле'
+    }
+    else {
+        BDInput.parentNode.classList.remove('invalid');
+        BDInput.parentNode.querySelector('.error-msg').innerText = ''
+    }
 
     //tg 
     if (tgInput.value == '') {
@@ -279,7 +289,7 @@ function validateForm2() {
     // level
     let checked = false
     for (let a of levelnput.querySelectorAll(".dropdown-elem")) {
-        if (a.classList.contains('picked')) {checked=True; break;}
+        if (a.classList.contains('picked')) {checked=true; break;}
     }
     if (!checked) {
         levelnput.parentNode.classList.add('invalid')
@@ -293,7 +303,7 @@ function validateForm2() {
     // faculty
     checked = false
     for (let a of facultyInput.querySelectorAll(".dropdown-elem")) {
-        if (a.classList.contains('picked')) {checked=True; break;}
+        if (a.classList.contains('picked')) {checked=true; break;}
     }
     if (!checked) {
         facultyInput.parentNode.classList.add('invalid')
@@ -305,15 +315,7 @@ function validateForm2() {
         facultyInput.parentNode.querySelector('.error-msg').firstChild.innerText = ''
     }
     // jobInput
-    if (jobInput.value == '') {
-        jobInput.classList.add('invalid');
-        jobInput.parentNode.querySelector('.error-msg').firstChild.innerText = 'Обязательное поле'
-        validationRes = false;
-    }
-    else {
-        jobInput.classList.remove('invalid');
-        jobInput.parentNode.querySelector('.error-msg').firstChild.innerText = '';
-    }
+    // norm
     return validationRes
 }
 
@@ -341,7 +343,7 @@ function copyToDjango() {
         }
         if (e.name=='faculty') {
             for (inp of facultyInput.querySelectorAll('.dropdown-elem')) {
-                if (inp.facultyInput.contains('picked')) {
+                if (inp.classList.contains('picked')) {
                     e.value = inp.innerText
                 }
             }
@@ -357,9 +359,18 @@ function submitForm1() {
     form1.classList.add('hide')
     form2.classList.remove('hide')
 }
-function subminForm2() {
+function submitForm2() {
     if (!validateForm2()) {return;}
     copyToDjango()
-    djangoForm.submit()
+    
+    const formData = new FormData(djangoForm);
+    fetch('/reg/api/users/', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)
+    })
 }
 
