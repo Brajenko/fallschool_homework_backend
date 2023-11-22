@@ -5,7 +5,7 @@
 + Python, Django, Djangorestframework
 + JS (fetch, animations)
 + HTML+CSS
-** Usage
+## Usage
 ```
 git clone https://github.com/Brajenko/fallschool_homework_backend
 cd fallschool_homework_backend/
