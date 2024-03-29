@@ -1,5 +1,5 @@
 # fallschool_homework_backend
-### Один из моих pet-проектов, домашняя работа для ОШ2023
+### Один из моих pet-проектов, создан в рамках курса "Web-разработка" в НИУ ВШЭ 
 Написан на Django (backend), HTML+CSS+JS (frontend)
 Демонстрирует навыки работы с:
 + Python, Django, Djangorestframework
